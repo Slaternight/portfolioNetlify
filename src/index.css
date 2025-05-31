@@ -1,0 +1,6 @@
+
+@import "tailwindcss";
+
+#root {
+    background-image: url(assets/bg.webp);
+}

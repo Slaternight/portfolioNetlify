@@ -1,0 +1,61 @@
+<div>
+        <nav>
+          <li>Logo</li>
+          <li>Sobre Mi</li>
+          <li>Portafolio</li>
+        </nav>
+      </div>
+
+      <div>
+        <h2>BIOGRAFÍA XD</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quaerat quae, dignissimos, illo, culpa distinctio omnis alias assumenda tenetur placeat quo velit commodi. Nesciunt qui, vero ab velit nihil consectetur!
+        Repellendus fugit corporis itaque, reiciendis necessitatibus iusto sapiente ut, veniam incidunt reprehenderit officia unde sequi neque ipsam quis consequatur eum, possimus amet assumenda quae enim officiis impedit blanditiis molestiae! Odio!
+        Odit, qui numquam! Labore reiciendis accusamus voluptatum incidunt quaerat nesciunt? Quidem eaque voluptas beatae quibusdam totam tempora sequi odio reprehenderit numquam delectus repellendus cupiditate, nulla iusto voluptatibus, modi eveniet eum!
+        Reiciendis sequi, vel nostrum cum sapiente iste ab ipsa iusto atque qui, explicabo nam iure neque cumque doloremque possimus asperiores obcaecati error architecto mollitia quibusdam totam nisi ullam! Unde, in?
+        Aspernatur fugiat excepturi voluptatibus animi quae facere nobis! Nemo maiores odit ea eum eos dolor corrupti sint accusamus facere provident magni quidem, aliquam amet voluptatibus recusandae placeat dolore, in deserunt?
+        Illum voluptas iusto incidunt provident! Consequuntur necessitatibus beatae tempora ipsa optio non quis animi nesciunt corrupti impedit inventore eos itaque dolorum voluptate, soluta debitis ratione, repellat mollitia distinctio illo expedita!</p>
+      </div>
+
+      <div>
+        <footer>
+          <div>
+            <h3>
+              Pages
+            </h3>
+          </div>
+          <div>
+            <h3>
+              Work
+            </h3>
+          </div>
+          <div>
+            <h3>
+              Contact
+            </h3>
+          </div>
+        </footer>
+      </div>
+
+
+      nav {
+        background-color: #f0f0f0;
+        padding: 1rem;
+      }
+    
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 1rem;
+      }
+    
+      li a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+      }
+    
+      li a:hover {
+        color: #007bff;
+      }

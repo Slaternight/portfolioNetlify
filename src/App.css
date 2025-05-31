@@ -1,0 +1,17 @@
+@import "tailwindcss";
+main {
+    background-image: url(assets/bg.webp);
+}
+
+.logo {
+    height: 3em;
+    padding: .5em;
+    will-change: filter;
+    transition: filter 300ms;
+  }
+  .logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+  }
+  .logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+  }
