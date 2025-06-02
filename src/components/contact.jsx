@@ -1,17 +1,5 @@
 import React from "react";
 
-function contact() {
-  const [name, setName] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [message, setMessage] = React.useState("");
-
-  function encode(data) {
-    return Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-      )
-      .join("&");
-  }
 
 
 
@@ -116,6 +104,5 @@ function contact() {
       </div>
     </section>
   );
-}
 
 export default contact;
