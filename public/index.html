@@ -1,17 +1,17 @@
 <html lang="en">
   <head>
+    <!-- head content skipped -->
   </head>
   <body>
 
-    <form name="contacto" netlify netlify-honeypot="bot-field" hidden>
-      <input type="text" name="nombre" />
-      <input type="email" name="email" />
-      <textarea name="mensaje"></textarea>
-      <input name="bot-field" /> {/* Campo honeypot */}
-    </form>
+  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <textarea name="message"></textarea>
+  </form>
   
     <noscript>Necesitas activar JavaScript para correr esta aplicación.</noscript>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script src="/src/main.jsx"></script>
   </body>
 </html>
