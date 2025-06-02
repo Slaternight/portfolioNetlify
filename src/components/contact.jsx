@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Formulario() {
+function contact() {
   const [formData, setFormData] = useState({
     nombre: '',
     email: '',
@@ -79,4 +79,4 @@ function Formulario() {
   );
 }
 
-export default Formulario;
+export default contact;
