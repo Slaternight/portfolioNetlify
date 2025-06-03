@@ -20,27 +20,7 @@ function contact() {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", name, email, message }),
     })
-      .then(response => {
-        
-          console.log('Response:', response);
-          if (response.ok) {
-              alert("Message sent22!");
-              
-              setName('');
-              setEmail('');    
-              setMessage(''); 
-              // -----------------------------------------------------------
-          } else {
-              // Log the error response if the status is not 2xx (e.g., 404, 500)
-              console.error('Form submission failed:', response.status, response.statusText);
-              alert(`Error al enviar el formulario: ${response.status} ${response.statusText}`);
-          }
-      })
-      .catch((error) => {
-        // Log any network or unexpected errors
-        console.error('Network or unexpected error:', error);
-        alert(`Ocurrió un error inesperado: ${error.message}`);
-      });
+      
   }
 
   return (
