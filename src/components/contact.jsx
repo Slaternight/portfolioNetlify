@@ -5,6 +5,8 @@ function contact() {
   const [email, setEmail] = React.useState("");
   const [message, setMessage] = React.useState("");
 
+  const [statusMessage, setStatusMessage] = useState(null);
+
   function encode(data) {
     return Object.keys(data)
       .map(
@@ -22,6 +24,30 @@ function contact() {
     })
       
   }
+
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  setStatusMessage(null); // Limpiar mensajes previos
+
+  try {
+    const response = await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ "form-name": "contact", name, email, message }),
+    });
+
+    if (response.ok) {
+      setStatusMessage({ type: 'success', text: '¡Formulario enviado con éxito!' });
+      setName('');
+      setEmail('');
+      setMessage('');
+    } else {
+      setStatusMessage({ type: 'error', text: `Error: ${response.status} ${response.statusText}. Inténtalo de nuevo.` });
+    }
+  } catch (error) {
+    setStatusMessage({ type: 'error', text: 'Ocurrió un error de red. Por favor, revisa tu conexión.' });
+  }
+};
 
   return (
     <section id="contact" className="relative">
@@ -113,6 +139,11 @@ function contact() {
               onChange={(e) => setMessage(e.target.value)}
             />
           </div>
+             {statusMessage && (
+      <p className={statusMessage.type === 'success' ? 'text-green-500' : 'text-red-500'}>
+        {statusMessage.text}
+      </p>
+    )}
           <button
             type="submit"
             className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
