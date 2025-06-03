@@ -15,15 +15,8 @@ function contact() {
       .join("&");
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", name, email, message }),
-    })
-      
-  }
+ 
+  
 
   const handleSubmit = async (e) => {
   e.preventDefault();
