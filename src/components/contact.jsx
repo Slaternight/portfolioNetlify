@@ -21,14 +21,14 @@ function contact() {
       body: encode({ "form-name": "contact", name, email, message }),
     })
       .then(response => {
-          // Log the full response to see status, headers, etc.
+        
           console.log('Response:', response);
-          if (response.ok) { // Status is 2xx, meaning success
-              alert("Message sent!");
-              // --- AQUÍ ES DONDE PONES EL CÓDIGO PARA LIMPIAR LOS CAMPOS ---
-              setName('');     // Limpia el campo de nombre
-              setEmail('');    // Limpia el campo de email
-              setMessage('');  // Limpia el campo de mensaje
+          if (response.ok) {
+              alert("Message sent22!");
+              
+              setName('');
+              setEmail('');    
+              setMessage(''); 
               // -----------------------------------------------------------
           } else {
               // Log the error response if the status is not 2xx (e.g., 404, 500)
