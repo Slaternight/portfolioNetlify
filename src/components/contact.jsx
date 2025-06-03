@@ -20,8 +20,27 @@ function contact() {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", name, email, message }),
     })
-      .then(() => alert("Message sent!"))
-      .catch((error) => alert(error));
+      .then(response => {
+          // Log the full response to see status, headers, etc.
+          console.log('Response:', response);
+          if (response.ok) { // Status is 2xx, meaning success
+              alert("Message sent!");
+              // --- AQUÍ ES DONDE PONES EL CÓDIGO PARA LIMPIAR LOS CAMPOS ---
+              setName('');     // Limpia el campo de nombre
+              setEmail('');    // Limpia el campo de email
+              setMessage('');  // Limpia el campo de mensaje
+              // -----------------------------------------------------------
+          } else {
+              // Log the error response if the status is not 2xx (e.g., 404, 500)
+              console.error('Form submission failed:', response.status, response.statusText);
+              alert(`Error al enviar el formulario: ${response.status} ${response.statusText}`);
+          }
+      })
+      .catch((error) => {
+        // Log any network or unexpected errors
+        console.error('Network or unexpected error:', error);
+        alert(`Ocurrió un error inesperado: ${error.message}`);
+      });
   }
 
   return (
