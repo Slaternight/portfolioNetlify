@@ -8,6 +8,8 @@ import Contact from "./components/contact.jsx";
 import Projects from "./components/Projects.jsx";
 import Skills from "./components/Skills.jsx";
 import Testimonials from "./components/Testimonials.jsx";
+import Footer from "./components/Footer.jsx";
+import Whatsapp from "./components/Whatsapp.jsx";
 
 
 
@@ -21,6 +23,8 @@ function App() {
       <Skills />
       {/* <Testimonials /> */}
       <Contact />
+      <Whatsapp />
+      <Footer />
 
      
     </main>
