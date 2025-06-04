@@ -76,6 +76,18 @@ export const skills = [
       name: "REACT"
     },
     {
+      name: "WORDPRESS"
+    },
+    {
+      name: "ELEMENTOR PRO"
+    },
+    {
+      name: "SHOPIFY"
+    },
+    {
+      name: "LIQUID"
+    },
+    {
       name: "JAVASCRIPT VANILLA"
     },
     {
