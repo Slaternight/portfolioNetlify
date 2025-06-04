@@ -1,4 +1,5 @@
 import { FloatingWhatsApp } from 'react-floating-whatsapp'
+import pictureMineChat from "../assets/profile/ft.png";
 
 export default function Whatsapp() {
 
@@ -10,7 +11,7 @@ export default function Whatsapp() {
         allowClickAway
         notification
         notificationSound
-        avatar="./src/assets/profile/ft.png"
+        avatar={pictureMineChat}
          />
   )
 }
