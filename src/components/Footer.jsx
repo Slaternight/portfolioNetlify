@@ -23,7 +23,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="text-sm text-white-800 py-4">
-        © 2020 Copyright: <a href="https://mdbootstrap.com" className="hover:underline">MDBootstrap.com</a>
+        © 2025 · Designed & developed by <a href="https://www.linkedin.com/in/slayder-reyes-cuellar-2b7b801a0/" className="hover:underline" target="_blank">Slayder Reyes Cuellar </a>
       </div>
     </footer>
   );

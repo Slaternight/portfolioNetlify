@@ -7,11 +7,17 @@ export default function Whatsapp() {
       <FloatingWhatsApp
         phoneNumber="+573208441575"
         accountName="Slayder"
-        allowEsc
+        // initialMessageByServer="Hi there!🖖 How can I assist you today? 🫡"
+        // initialMessageByClient="Hello! 🖐️ I found your contact on your website 🖥️. I would like to chat with you about..."  
+        chatMessage="Hi there!🖖 How can I assist you today? 🫡"
+        statusMessage="Available right now" // "Available", "Busy", "Away", "Offline"
+        placeholder = "Tell me whatever you want.."
+        allowEsc={true}
         allowClickAway
-        notification
+        notification={true}
         notificationSound
         avatar={pictureMineChat}
+        darkMode="true"
          />
   )
 }
