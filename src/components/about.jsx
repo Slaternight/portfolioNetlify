@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import pictureMine from "../assets/profile/ft.png";
 
-const TYPING_WORDS = ["React", "Java", "Vue", "Angular", "Node.js"];
+const TYPING_WORDS = ["React", "NodeJS", "ExpressJS", "Html", "Sass", "Webpack", "Wordpress", "Shopify"];
 
 export default function About() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
