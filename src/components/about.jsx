@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import pictureMine from "../assets/profile/ft.png";
+import gifAdventure from "../assets/catAdventure.gif";
 
 const TYPING_WORDS = ["React", "NodeJS", "ExpressJS", "Html", "Sass", "Webpack", "Wordpress", "Shopify"];
 
@@ -37,8 +38,8 @@ export default function About() {
   }, [currentWordIndex]);
 
   return (
-    <section id="about">
-      <div className="container mx-auto flex px-10 py-20 md:flex-row flex-col items-center">
+    <section id="about" className="bg-[url(./assets/sunsetWallpaper.jpeg)] bg-top bg-cover bg-no-repeat bg-fixed p-4">
+      <div className="container mx-auto flex px-10 py-20 md:flex-row flex-col items-center  rounded-md backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 bg-clip-padding">
         <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
           <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">
             Hi, i'm Invin....
@@ -73,7 +74,7 @@ export default function About() {
           <img
             className="object-cover object-center rounded"
             alt="heroo"
-            
+            src={gifAdventure}
           />
         </div>
       </div>
