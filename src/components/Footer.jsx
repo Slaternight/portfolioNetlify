@@ -6,7 +6,8 @@ import {
   faBehance,
   faInstagram,
   faLinkedinIn,
-  faGithub
+  faGithub,
+  faGalacticRepublic
 } from '@fortawesome/free-brands-svg-icons';
 
 export default function Footer() {
@@ -20,6 +21,7 @@ export default function Footer() {
           <a href="https://www.instagram.com/slaternight/" target="_blank"><FontAwesomeIcon icon={faInstagram} className="hover:text-pink-500 transition text-2xl" /></a>
           <a href="https://www.linkedin.com/in/slayder-reyes-cuellar-2b7b801a0/" target="_blank"><FontAwesomeIcon icon={faLinkedinIn} className="hover:text-blue-700 transition text-2xl" /></a>
           <a href="https://github.com/Slaternight" target="_blank"><FontAwesomeIcon icon={faGithub} className="hover:text-black transition text-2xl" /></a>
+          <a href="https://slaternight.carrd.co/" target="_blank"><FontAwesomeIcon icon={faGalacticRepublic} className="hover:text-white transition text-2xl" /></a>
         </div>
       </div>
       <div className="text-sm text-white-800 py-4">
