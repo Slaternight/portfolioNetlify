@@ -15,7 +15,7 @@ import Whatsapp from "./components/Whatsapp.jsx";
 function App() {
 
   return (
-    <main className="text-gray-400 bg-gray-900 body-font">
+    <main className="text-gray-400 bg-gray-900 body-font selection:bg-slate-950 selection:text-slate-100">
       <Navbar />
       <About />
       <Projects />
