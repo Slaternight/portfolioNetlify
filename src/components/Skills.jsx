@@ -1,4 +1,4 @@
-import { BadgeCheckIcon, ChipIcon } from "@heroicons/react/solid";
+import { ChipIcon } from "@heroicons/react/solid";
 import { skills } from "../data";
 import "../effect";
 
@@ -7,24 +7,27 @@ export default function Skills() {
     <section id="skills">
       <div className="container px-5 py-10 mx-auto">
         <div className="text-center mb-20">
-          <ChipIcon className="w-10 inline-block mb-4" />
+          <ChipIcon className="w-10 inline-block mb-4 text-white" />
           <h1 className="sm:text-4xl text-3xl font-medium title-font text-white mb-4">
             Skills and Tech
           </h1>
-          <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
+          <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-300">
             Here you will find the skills and technologies that I have used in my latest projects.
           </p>
         </div>
-        <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
-          {skills.map((skill) => (
-            <div key={skill} className="p-2 sm:w-1/3 w-full">
-              <div className="bg-gray-800 rounded flex p-4 h-full items-center">
-                <BadgeCheckIcon className="text-green-400 w-6 h-6 flex-shrink-0 mr-4" />
-                <span className="title-font font-medium text-white">
-                  {skill.name}
-                </span>
-              </div>
-            </div>
+        <div className="flex flex-wrap justify-center gap-6">
+          {skills.map(({ name, icon: Icon }) => (
+            <div
+  key={name}
+  className="relative group w-24 h-24 flex flex-col items-center justify-center bg-gray-800 rounded-xl shadow-md hover:bg-gray-700 transition"
+>
+  <Icon className="text-3xl text-indigo-400" />
+
+  {/* Tooltip */}
+  <div className="absolute bottom-full mb-2 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transform scale-95 group-hover:scale-100 transition-all duration-200 pointer-events-none z-10 whitespace-nowrap">
+    {name}
+  </div>
+</div>
           ))}
         </div>
       </div>
