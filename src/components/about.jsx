@@ -17,8 +17,8 @@ export default function About() {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.append("entry.173880551", name); // Reemplaza con tu ID real
-    formData.append("entry.904923825", email); // Reemplaza con tu ID real
+    formData.append("entry.173880551", name);
+    formData.append("entry.904923825", email);
 
     fetch("https://docs.google.com/forms/d/e/1FAIpQLSc51F-16M-7QNz5_UGcG190Ed-D3WPDWB-PUppxwYYp_UcW2Q/formResponse", {
       method: "POST",
@@ -87,7 +87,7 @@ export default function About() {
             {!submitted ? (
               <button
                 onClick={() => setShowModal(true)}
-                className="text-white bg-blue-600 border-0 py-2 px-6 focus:outline-none hover:bg-blue-700 rounded text-lg"
+                className="text-white bg-indigo-600 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-700 rounded text-lg"
               >
                 Download CV
               </button>
@@ -95,7 +95,7 @@ export default function About() {
               <a
                 href="/cv-slayder.pdf"
                 download
-                className="text-white bg-green-600 border-0 py-2 px-6 focus:outline-none hover:bg-green-700 rounded text-lg"
+                className="text-white bg-indigo-600 border-0 py-2 px-6 focus:outline-none hover:bg-green-700 rounded text-lg"
               >
                 Download CV
               </a>
@@ -110,7 +110,7 @@ export default function About() {
 
       {/* MODAL */}
       {showModal && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
+        <div className="fixed inset-0 z-50 bg-opacity-50 flex items-center justify-center">
           <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md relative">
             <button
               onClick={() => setShowModal(false)}
@@ -122,7 +122,7 @@ export default function About() {
             <form onSubmit={handleSubmit} className="flex flex-col gap-3">
               <input
                 type="text"
-                placeholder="Your name"
+                placeholder="Who are you?"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
@@ -130,7 +130,7 @@ export default function About() {
               />
               <input
                 type="email"
-                placeholder="Your email"
+                placeholder="Your email :3"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
