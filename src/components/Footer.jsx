@@ -7,7 +7,8 @@ import {
   faInstagram,
   faLinkedinIn,
   faGithub,
-  faGalacticRepublic
+  faGalacticRepublic,
+  faGoogle
 } from '@fortawesome/free-brands-svg-icons';
 
 export default function Footer() {
@@ -18,14 +19,15 @@ export default function Footer() {
           <a href="https://www.facebook.com/slayder.reyes" target="_blank"><FontAwesomeIcon icon={faFacebookF} className="hover:text-blue-600 transition text-2xl" /></a>
           <a href="https://x.com/slaydermanreyes" target="_blank"><FontAwesomeIcon icon={faTwitter} className="hover:text-sky-500 transition text-2xl" /></a>
           <a href="https://www.behance.net/slaternight" target="_blank"><FontAwesomeIcon icon={faBehance} className="hover:text-red-500 transition text-2xl" /></a>
-          <a href="https://www.instagram.com/slaternight/" target="_blank"><FontAwesomeIcon icon={faInstagram} className="hover:text-pink-500 transition text-2xl" /></a>
-          <a href="https://www.linkedin.com/in/slayder-reyes-cuellar-2b7b801a0/" target="_blank"><FontAwesomeIcon icon={faLinkedinIn} className="hover:text-blue-700 transition text-2xl" /></a>
+          <a href="https://www.instagram.com/slaternight" target="_blank"><FontAwesomeIcon icon={faInstagram} className="hover:text-pink-500 transition text-2xl" /></a>
+          <a href="https://www.linkedin.com/in/slaternight" target="_blank"><FontAwesomeIcon icon={faLinkedinIn} className="hover:text-blue-700 transition text-2xl" /></a>
           <a href="https://github.com/Slaternight" target="_blank"><FontAwesomeIcon icon={faGithub} className="hover:text-black transition text-2xl" /></a>
-          <a href="https://slaternight.carrd.co/" target="_blank"><FontAwesomeIcon icon={faGalacticRepublic} className="hover:text-white transition text-2xl" /></a>
+          <a href="https://slaternight.carrd.co" target="_blank"><FontAwesomeIcon icon={faGalacticRepublic} className="hover:text-white transition text-2xl" /></a>
+          <a href="https://g.dev/slaternight" target="_blank"><FontAwesomeIcon icon={faGoogle} className="hover:text-blue-400 transition text-2xl" /></a>
         </div>
       </div>
       <div className="text-sm text-white-800 py-4">
-        © 2025 · Designed & developed by <a href="https://www.linkedin.com/in/slayder-reyes-cuellar-2b7b801a0/" className="hover:underline" target="_blank">Slayder Reyes Cuellar </a>
+        © 2025 · Designed & developed by <a href="https://www.linkedin.com/in/slaternight" className="hover:underline" target="_blank">Slayder Reyes Cuellar </a>
       </div>
     </footer>
   );
