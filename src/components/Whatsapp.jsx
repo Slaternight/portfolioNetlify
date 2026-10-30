@@ -1,23 +1,24 @@
-import { FloatingWhatsApp } from 'react-floating-whatsapp'
+import { FloatingWhatsApp } from "react-floating-whatsapp";
 import pictureMineChat from "../assets/profile/ft.png";
+import { useLanguage } from "../i18n/LanguageContext";
+import { profile } from "../data/profile";
 
 export default function Whatsapp() {
+  const { t } = useLanguage();
 
   return (
-      <FloatingWhatsApp
-        phoneNumber="+573208441575"
-        accountName="Slayder"
-        // initialMessageByServer="Hi there!🖖 How can I assist you today? 🫡"
-        // initialMessageByClient="Hello! 🖐️ I found your contact on your website 🖥️. I would like to chat with you about..."  
-        chatMessage="Hi there!🖖 How can I assist you today? 🫡"
-        statusMessage="Available right now" // "Available", "Busy", "Away", "Offline"
-        placeholder = "Tell me whatever you want.."
-        allowEsc={true}
-        allowClickAway
-        notification={true}
-        notificationSound
-        avatar={pictureMineChat}
-        darkMode="true"
-         />
-  )
+    <FloatingWhatsApp
+      phoneNumber={profile.phoneRaw}
+      accountName={profile.shortName}
+      chatMessage={t.whatsapp.chat}
+      statusMessage={t.whatsapp.status}
+      placeholder={t.whatsapp.placeholder}
+      allowEsc
+      allowClickAway
+      notification
+      notificationSound
+      avatar={pictureMineChat}
+      darkMode
+    />
+  );
 }

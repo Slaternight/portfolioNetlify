@@ -1,33 +1,56 @@
-import { ChipIcon } from "@heroicons/react/solid";
-import { skills } from "../data";
-import "../effect";
+import { useRef } from "react";
+import { useLanguage } from "../i18n/LanguageContext";
+import { useReveal } from "../hooks/useReveal";
+import { skillGroups } from "../data/skills";
+
+// Feeds the cursor position to the .spotlight background of the hovered card
+const trackPointer = (e) => {
+  const rect = e.currentTarget.getBoundingClientRect();
+  e.currentTarget.style.setProperty("--mx", `${e.clientX - rect.left}px`);
+  e.currentTarget.style.setProperty("--my", `${e.clientY - rect.top}px`);
+};
 
 export default function Skills() {
-  return (
-    <section id="skills">
-      <div className="container px-5 py-10 mx-auto">
-        <div className="text-center mb-20">
-          <ChipIcon className="w-10 inline-block mb-4 text-white" />
-          <h1 className="sm:text-4xl text-3xl font-medium title-font text-white mb-4">
-            Skills and Tech
-          </h1>
-          <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-300">
-            Here you will find the skills and technologies that I have used in my latest projects.
-          </p>
-        </div>
-        <div className="flex flex-wrap justify-center gap-6">
-          {skills.map(({ name, icon: Icon }) => (
-            <div
-  key={name}
-  className="relative group w-24 h-24 flex flex-col items-center justify-center bg-gray-800 rounded-xl shadow-md hover:bg-gray-700 transition"
->
-  <Icon className="text-3xl text-indigo-400" />
+  const { t } = useLanguage();
+  const sectionRef = useRef(null);
+  useReveal(sectionRef);
 
-  {/* Tooltip */}
-  <div className="absolute bottom-full mb-2 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transform scale-95 group-hover:scale-100 transition-all duration-200 pointer-events-none z-10 whitespace-nowrap">
-    {name}
-  </div>
-</div>
+  return (
+    <section id="skills" ref={sectionRef} className="py-24">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="max-w-2xl">
+          <p data-reveal className="section-label">{t.skills.label}</p>
+          <h2 data-reveal className="section-title mt-3">{t.skills.title}</h2>
+          <p data-reveal className="mt-4 leading-relaxed">{t.skills.description}</p>
+        </div>
+
+        <div className="mt-12 grid gap-5 md:grid-cols-2">
+          {skillGroups.map(({ key, icon: GroupIcon, items }) => (
+            <article
+              key={key}
+              data-reveal
+              onPointerMove={trackPointer}
+              className="card spotlight group relative overflow-hidden p-6 transition-colors hover:border-accent-400/25 [&:not(:hover)]:bg-none"
+            >
+              <header className="flex items-center gap-3">
+                <span className="grid h-10 w-10 place-items-center rounded-lg bg-accent-500/15 text-accent-400">
+                  <GroupIcon className="h-5 w-5" />
+                </span>
+                <h3 className="font-display text-lg font-semibold text-fg">{t.skills.groups[key]}</h3>
+                <span className="ml-auto font-mono text-xs text-muted/70">{String(items.length).padStart(2, "0")}</span>
+              </header>
+              <ul className="mt-5 flex flex-wrap gap-2">
+                {items.map(({ name, icon: Icon }) => (
+                  <li
+                    key={name}
+                    className="flex items-center gap-2 rounded-lg border border-white/[0.08] bg-ink-800/80 px-3 py-2 text-sm text-fg/90 transition hover:-translate-y-0.5 hover:border-accent-400/40 hover:text-fg"
+                  >
+                    <Icon className="h-4 w-4 text-accent-400" />
+                    {name}
+                  </li>
+                ))}
+              </ul>
+            </article>
           ))}
         </div>
       </div>
