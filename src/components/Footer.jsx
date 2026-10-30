@@ -1,33 +1,45 @@
-import { BadgeCheckIcon, ChipIcon, FlagIcon } from "@heroicons/react/solid";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faFacebookF,
-  faTwitter,
-  faBehance,
-  faInstagram,
-  faLinkedinIn,
-  faGithub,
-  faGalacticRepublic,
-  faGoogle
-} from '@fortawesome/free-brands-svg-icons';
+import logo from "../assets/logo_1.svg";
+import { useLanguage } from "../i18n/LanguageContext";
+import { profile, socials } from "../data/profile";
+import { modKeyLabel } from "../lib/scroll";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
-     <footer className="text-center bg-black-900">
-      <div className="py-6">
-        <div className="flex justify-center space-x-6 text-gray-700 text-xl">
-          <a href="https://www.facebook.com/slayder.reyes" target="_blank"><FontAwesomeIcon icon={faFacebookF} className="hover:text-blue-600 transition text-2xl" /></a>
-          <a href="https://x.com/slaydermanreyes" target="_blank"><FontAwesomeIcon icon={faTwitter} className="hover:text-sky-500 transition text-2xl" /></a>
-          <a href="https://www.behance.net/slaternight" target="_blank"><FontAwesomeIcon icon={faBehance} className="hover:text-red-500 transition text-2xl" /></a>
-          <a href="https://www.instagram.com/slaternight" target="_blank"><FontAwesomeIcon icon={faInstagram} className="hover:text-pink-500 transition text-2xl" /></a>
-          <a href="https://www.linkedin.com/in/slaternight" target="_blank"><FontAwesomeIcon icon={faLinkedinIn} className="hover:text-blue-700 transition text-2xl" /></a>
-          <a href="https://github.com/Slaternight" target="_blank"><FontAwesomeIcon icon={faGithub} className="hover:text-black transition text-2xl" /></a>
-          <a href="https://slaternight.carrd.co" target="_blank"><FontAwesomeIcon icon={faGalacticRepublic} className="hover:text-white transition text-2xl" /></a>
-          <a href="https://g.dev/slaternight" target="_blank"><FontAwesomeIcon icon={faGoogle} className="hover:text-blue-400 transition text-2xl" /></a>
-        </div>
+    <footer className="border-t border-white/[0.06] bg-ink-950/60">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 py-10 sm:px-6 md:flex-row md:justify-between">
+        <img src={logo} alt="Slaternight" className="h-6 w-auto opacity-80" />
+        <ul className="flex flex-wrap justify-center gap-2">
+          {socials.map(({ name, url, icon: Icon }) => (
+            <li key={name}>
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={name}
+                title={name}
+                className="grid h-10 w-10 place-items-center rounded-lg text-muted transition hover:-translate-y-0.5 hover:bg-white/5 hover:text-accent-400"
+              >
+                <Icon className="h-[18px] w-[18px]" />
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
-      <div className="text-sm text-white-800 py-4">
-        © 2025 · Designed & developed by <a href="https://www.linkedin.com/in/slaternight" className="hover:underline" target="_blank">Slayder Reyes Cuellar </a>
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-2 border-t border-white/[0.04] px-4 py-6 text-center text-xs sm:px-6 md:flex-row md:justify-between md:text-left">
+        <p>
+          © {new Date().getFullYear()} · {t.footer.built}{" "}
+          <a href={socials[0].url} target="_blank" rel="noopener noreferrer" className="text-fg hover:text-accent-400">
+            {profile.name}
+          </a>
+          <span className="hidden sm:inline"> · {t.footer.stack}</span>
+        </p>
+        <p className="hidden items-center gap-1.5 md:flex">
+          <kbd className="kbd">{modKeyLabel()}</kbd>
+          <kbd className="kbd">K</kbd>
+          {t.footer.hint}
+        </p>
       </div>
     </footer>
   );
